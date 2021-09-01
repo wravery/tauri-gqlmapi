@@ -588,8 +588,7 @@ dependencies = [
 [[package]]
 name = "cxx"
 version = "1.0.54"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8431240a7c50efe7610cbddd167ea5737a053947940fc815f72cd2864c0af36b"
+source = "git+https://github.com/wravery/cxx#8e8a2a3d1b22bb0451c6a2f1e3184a3c382a3c76"
 dependencies = [
  "cc",
  "cxxbridge-flags",
@@ -615,14 +614,12 @@ dependencies = [
 [[package]]
 name = "cxxbridge-flags"
 version = "1.0.54"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1396df99aac70a2b73cc0f1bb333adb83d71dfa17cfa31a5467dc933071c5ef0"
+source = "git+https://github.com/wravery/cxx#8e8a2a3d1b22bb0451c6a2f1e3184a3c382a3c76"
 
 [[package]]
 name = "cxxbridge-macro"
 version = "1.0.54"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ac15d8552d84daf53d8a195bf45f2ca529d099465228146eb59e75bbbfdde5c"
+source = "git+https://github.com/wravery/cxx#8e8a2a3d1b22bb0451c6a2f1e3184a3c382a3c76"
 dependencies = [
  "proc-macro2",
  "quote 1.0.9",
@@ -1242,9 +1239,7 @@ dependencies = [
 
 [[package]]
 name = "gqlmapi-rs"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac6350fef7889b355a8e3595abd731263e0872924d5b713046ee3a6cc0c626ef"
+version = "0.5.0"
 dependencies = [
  "cmake",
  "cxx",
