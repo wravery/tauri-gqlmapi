@@ -412,6 +412,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "const-sha1"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb58b6451e8c2a812ad979ed1d83378caa5e927eef2622017a45f251457c2c9d"
+
+[[package]]
 name = "constant_time_eq"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -588,7 +594,7 @@ dependencies = [
 [[package]]
 name = "cxx"
 version = "1.0.54"
-source = "git+https://github.com/wravery/cxx#8e8a2a3d1b22bb0451c6a2f1e3184a3c382a3c76"
+source = "git+https://github.com/wravery/cxx#3e00ec08af5e99962665a60dfa53a861b888cccc"
 dependencies = [
  "cc",
  "cxxbridge-flags",
@@ -614,12 +620,12 @@ dependencies = [
 [[package]]
 name = "cxxbridge-flags"
 version = "1.0.54"
-source = "git+https://github.com/wravery/cxx#8e8a2a3d1b22bb0451c6a2f1e3184a3c382a3c76"
+source = "git+https://github.com/wravery/cxx#3e00ec08af5e99962665a60dfa53a861b888cccc"
 
 [[package]]
 name = "cxxbridge-macro"
 version = "1.0.54"
-source = "git+https://github.com/wravery/cxx#8e8a2a3d1b22bb0451c6a2f1e3184a3c382a3c76"
+source = "git+https://github.com/wravery/cxx#3e00ec08af5e99962665a60dfa53a861b888cccc"
 dependencies = [
  "proc-macro2",
  "quote 1.0.9",
@@ -1244,6 +1250,7 @@ dependencies = [
  "cmake",
  "cxx",
  "cxx-build",
+ "windows",
 ]
 
 [[package]]
@@ -2656,9 +2663,9 @@ dependencies = [
 
 [[package]]
 name = "siphasher"
-version = "0.3.6"
+version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "729a25c17d72b06c68cb47955d44fda88ad2d3e7d77e025663fdd69b93dd71a1"
+checksum = "533494a8f9b724d33625ab53c6c4800f7cc445895924a8ef649222dcb76e938b"
 
 [[package]]
 name = "slab"
@@ -3180,9 +3187,9 @@ dependencies = [
 
 [[package]]
 name = "typenum"
-version = "1.13.0"
+version = "1.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "879f6906492a7cd215bfa4cf595b600146ccfac0c79bcbd1f3000162af5e8b06"
+checksum = "b63708a265f51345575b27fe43f9500ad611579e764c79edbc2037b1121959ec"
 
 [[package]]
 name = "ucd-trie"
@@ -3512,6 +3519,51 @@ name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+
+[[package]]
+name = "windows"
+version = "0.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef84dd25f4c69a271b1bba394532bf400523b43169de21dfc715e8f8e491053d"
+dependencies = [
+ "const-sha1",
+ "windows_gen",
+ "windows_macros",
+]
+
+[[package]]
+name = "windows_gen"
+version = "0.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ac7bb21b8ff5e801232b72a6ff554b4cc0cef9ed9238188c3ca78fe3968a7e5d"
+dependencies = [
+ "windows_quote",
+ "windows_reader",
+]
+
+[[package]]
+name = "windows_macros"
+version = "0.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5566b8c51118769e4a9094a688bf1233a3f36aacbfc78f3b15817fe0b6e0442f"
+dependencies = [
+ "syn 1.0.75",
+ "windows_gen",
+ "windows_quote",
+ "windows_reader",
+]
+
+[[package]]
+name = "windows_quote"
+version = "0.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4af8236a9493c38855f95cdd11b38b342512a5df4ee7473cffa828b5ebb0e39c"
+
+[[package]]
+name = "windows_reader"
+version = "0.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2c8d5cf83fb08083438c5c46723e6206b2970da57ce314f80b57724439aaacab"
 
 [[package]]
 name = "winres"
