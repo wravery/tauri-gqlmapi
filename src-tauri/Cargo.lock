@@ -1246,6 +1246,7 @@ dependencies = [
 [[package]]
 name = "gqlmapi-rs"
 version = "0.5.0"
+source = "git+https://github.com/wravery/gqlmapi-rs#4b54163d3b2ace6a9c8adffff3ae0f9252c92ab0"
 dependencies = [
  "cmake",
  "cxx",
