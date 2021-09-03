@@ -1247,9 +1247,9 @@ dependencies = [
 
 [[package]]
 name = "gqlmapi-rs"
-version = "0.5.0"
+version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e766c77216ede4876d27128858d59467fb2cbb32fb03c6540bc513a5e1ea03c6"
+checksum = "f79212ae46a807f347fc5e7deedd17acaf1e54bfb1d6609eeb85291a1d4adfb3"
 dependencies = [
  "cmake",
  "cxx",
