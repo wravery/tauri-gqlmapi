@@ -9,7 +9,8 @@ default-run = "app"
 edition = "2018"
 build = "src/build.rs"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[patch.crates-io]
+tauri = { git = "https://github.com/wravery/tauri", branch = "webview2-com" }
 
 [build-dependencies]
 tauri-build = { version = "1.0.0-beta.4" }
