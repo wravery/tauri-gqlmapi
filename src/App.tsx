@@ -1,4 +1,5 @@
 import React from "react";
+import { ExecutionResult } from "graphql";
 import GraphiQL from "graphiql";
 import {
   Fetcher,
@@ -16,7 +17,7 @@ const App: React.FC<any> = () => {
   let _observableId = 0;
 
   interface FetchQueryObserver {
-    next: (value: FetcherResult) => void;
+    next: (value: ExecutionResult) => void;
     error?: (error: any) => void;
     complete?: () => void;
   }
@@ -26,7 +27,7 @@ const App: React.FC<any> = () => {
     observerId: number;
   }
 
-  interface FetchQueryObservable extends Observable<FetcherResult> {
+  interface FetchQueryObservable extends Observable<ExecutionResult> {
     unsubscribed: boolean;
     subscriptionKey: number;
     observableId: number;
@@ -34,7 +35,7 @@ const App: React.FC<any> = () => {
     subscriptions: Subscription[];
 
     onUnsubscribe: () => void;
-    onNext: (response: FetcherResult) => void;
+    onNext: (response: ExecutionResult) => void;
     onError: (error: string) => void;
     onComplete: () => void;
   }
@@ -72,7 +73,7 @@ const App: React.FC<any> = () => {
     // console.log(`Operation: ${operationName}`);
     // console.log(`Variables: ${variables}`);
 
-    const observable = {
+    const observable: FetchQueryObservable = {
       unsubscribed: false,
       subscriptionKey: 0,
       observableId: _observableId++,
@@ -107,12 +108,12 @@ const App: React.FC<any> = () => {
         }
       },
 
-      onNext: (response: FetcherResult) => {
+      onNext: (response: ExecutionResult) => {
         observable.subscriptions.forEach((subscription) => {
-          if (typeof subscription.observer === "function") {
-            subscription.observer(response);
-            subscription.unsubscribe();
-          } else {
+          if (
+            typeof subscription.observer === "object" &&
+            subscription.observer.next
+          ) {
             subscription.observer.next(response);
           }
         });
